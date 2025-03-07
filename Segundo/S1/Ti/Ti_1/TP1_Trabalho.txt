@@ -1,0 +1,147 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+import math
+import huffmancodec as huffc
+alfabeto=np.arange(0,2**16)
+data = pd.read_excel('CarDataset.xlsx')
+tabela=np.array(data) #colocar dados em uma matriz
+varNames=data.columns.values.tolist()
+mpg = 'MPG'
+varNames_sem_mpg=data.columns.values.tolist()
+varNames_sem_mpg.remove(mpg)
+plt.figure(figsize=(20,8))
+i=0
+for var in varNames_sem_mpg:
+        plt.subplot(321+i)
+        plt.scatter(data[var], data[mpg])#colocar no eixo x var e no eixo y o mpg
+        plt.title(f'{mpg} vs {var} ')
+        plt.xlabel(var)
+        plt.ylabel(mpg)
+        i= i + 1
+plt.subplots_adjust(hspace=0.5) 
+tabela=tabela.astype(np.uint16)
+dicio={'Acceleration':[tabela[:,0], np.unique(tabela[:,0])],
+       'Cylinders':[tabela[:,1], np.unique(tabela[:,1])],
+       'Displacement':[tabela[:,2], np.unique(tabela[:,2])],
+       'Horsepower':[tabela[:,3], np.unique(tabela[:,3])],
+       'ModelYear':[tabela[:,4], np.unique(tabela[:,4])],
+       'Weight':[tabela[:,5], np.unique(tabela[:,5])],
+       'MPG':[tabela[:,6], np.unique(tabela[:,6])],
+       }
+def contaSimbolo(alfab,simbolo):
+    soma = 0
+    for var in dicio[alfab][0]:
+        if var == simbolo:
+            soma+=1 
+    return soma
+def graficoBarras(alfab):
+    plt.figure(figsize=(20,8))
+    elementos=np.unique(dicio[alfab][0])
+    ocorrencia=[]
+    for i in range(len(elementos)):
+      ocorrencia.append(contaSimbolo(alfab,elementos[i]))
+    plt.xlabel(alfab)
+    plt.ylabel('Count')
+    elementos=elementos.astype(str)
+    plt.bar(elementos,ocorrencia,color='tab:red')
+graficoBarras('Acceleration')
+graficoBarras('Cylinders')
+#graficoBarras('Displacement')
+#graficoBarras('Horsepower')
+graficoBarras('ModelYear')
+#graficoBarras('Weight')
+graficoBarras('MPG')
+def binning(nome_a,space):
+    num_f = dicio[nome_a][0].max()
+    for i in range(0,num_f,space):
+        maximo_oc=0
+        num_maximo=i
+        for j in range(i,i+space):
+            num_oc = contaSimbolo(nome_a,j)
+            if num_oc > maximo_oc:
+                maximo_oc = num_oc
+                num_maximo = j
+        for k in range(0,len(dicio[nome_a][0])-1):
+            if (dicio[nome_a][0][k]>=i and dicio[nome_a][0][k]<i+space):
+                dicio[nome_a][0][k] = num_maximo
+binning('Displacement',5)  
+binning('Horsepower',5) 
+binning('Weight',40)  
+dadostodos=[]
+for i in range(7):
+    dadostodos.extend(dicio[varNames[i]][0])
+dicio['ALL']=dadostodos,np.unique(dadostodos)
+graficoBarras('Displacement')
+graficoBarras('Weight')
+graficoBarras('Horsepower')
+def Entropia(nome_a):
+    entropia=0
+    elementos=np.unique(dicio[nome_a][0])
+    total_elem= len(dicio[nome_a][0])
+    for elemento in elementos:
+        probabilidade=contaSimbolo(nome_a, elemento)/total_elem
+        entropia += probabilidade * math.log(probabilidade,2)
+    entropia = -entropia
+    return entropia
+codec = huffc.HuffmanCodec.from_data(dicio['ALL'][0])
+symbols,lenghts=codec.get_code_len()
+def ValorMedio(nome_a):
+    media=0
+    codec = huffc.HuffmanCodec.from_data(dicio[nome_a][0])
+    symbols,lenghts=codec.get_code_len()
+    total_elem=len(dicio[nome_a][0])
+    for i in range(0,len(lenghts)):
+        probabilidade=contaSimbolo(nome_a,symbols[i])/total_elem
+        media+= lenghts[i] * probabilidade
+    return media
+def Variancia(nome_a):
+    variancia=0
+    codec = huffc.HuffmanCodec.from_data(dicio[nome_a][0])
+    symbols,lenghts=codec.get_code_len()
+    total_elem=len(dicio[nome_a][0])
+    for i in range(0,len(lenghts)):
+        probabilidade=contaSimbolo(nome_a,symbols[i])/total_elem
+        variancia+=((lenghts[i]-ValorMedio(nome_a))**2 * probabilidade )
+    return variancia 
+def CPearson(alvo):
+    valor=np.corrcoef(dicio['MPG'][0],dicio[alvo][0])[0][1]
+    return valor
+def InfMutua(nome_a):
+    infmutua=0
+    total_elem=len(dicio[nome_a][0])
+    matriz=np.zeros([dicio[nome_a][0].max()+1,dicio['MPG'][0].max()+1])
+    for i in range(0,len(dicio[nome_a][0])):
+        matriz[dicio[nome_a][0][i]][dicio['MPG'][0][i]]+=1 
+    for x in dicio[nome_a][1]:
+        for y in dicio['MPG'][1]:
+            pxy = matriz[x][y]/np.sum(matriz)
+            px=contaSimbolo(nome_a,x)/total_elem
+            py=contaSimbolo('MPG',y)/total_elem
+            if(pxy!=0):
+                infmutua += pxy * np.log2(pxy/(px*py))
+    return infmutua
+ 
+def MpgCalc():
+    mpgcalc=np.zeros(len(dicio['MPG'][0]))
+    mpgcalc2=np.zeros(len(dicio['MPG'][0]))
+    mpgcalc3=np.zeros(len(dicio['MPG'][0]))
+    for i in range(0,len(dicio['MPG'][0])):
+        mpgcalc[i]=-5.5241-0.146*dicio['Acceleration'][0][i]-0.4909*dicio['Cylinders'][0][i]+0.0026*dicio['Displacement'][0][i]-0.0045*dicio['Horsepower'][0][i]+0.6725*dicio['ModelYear'][0][i]-0.0059*dicio['Weight'][0][i]
+        mpgcalc2[i]=-5.5241-0.4909*dicio['Cylinders'][0][i]+0.0026*dicio['Displacement'][0][i]-0.0045*dicio['Horsepower'][0][i]+0.6725*dicio['ModelYear'][0][i]-0.0059*dicio['Weight'][0][i]
+        mpgcalc3[i]=-5.5241-0.146*dicio['Acceleration'][0][i]-0.4909*dicio['Cylinders'][0][i]+0.0026*dicio['Displacement'][0][i]-0.0045*dicio['Horsepower'][0][i]+0.6725*dicio['ModelYear'][0][i]
+    
+for i in range(7):
+  print(varNames[i])
+  print("Entropia normal após binning:", Entropia(varNames[i]))
+  print("Entropia de Huffman após binning: ", Variancia(varNames[i]))
+  print("Relação de " + varNames[i] + " com MPG:", CPearson(varNames[i]))
+  print("IM", InfMutua(varNames[i]))
+  print("\n")
+print("Entropia completa: ", Entropia('ALL'))
+   
+    
+    
+    
+
+    

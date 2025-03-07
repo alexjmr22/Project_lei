@@ -1,0 +1,8 @@
+Alex;alex;professor
+Tiago;tiago;aluno
+Jorge;jorge;administrador
+Carla;carla;administrador
+Francisco;francisco;professor
+Miguel;miguel;aluno
+Miquelino;miquelino;aluno
+Marcio;marcio;professor

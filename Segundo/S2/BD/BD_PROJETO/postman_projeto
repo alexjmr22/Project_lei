@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "74debe7b-4973-4f7f-8059-2a2225228711",
+		"name": "dbproj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35110560",
+		"_collection_link": "https://duartes-fans.postman.co/workspace/Duarte's-fans-Workspace~bcf8407b-e323-4eb0-86c1-d635d6c255fb/collection/34820061-74debe7b-4973-4f7f-8059-2a2225228711?action=share&source=collection_link&creator=35110560"
+	},
+	"item": [
+		{
+			"name": "Register doctor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"doctor6\",\n    \"password\": \"securepassword\",\n    \"contact\": \"doctor1@example.com\",\n    \"medical_license\": 12345\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/register/doctor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"doctor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Nurse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"nurse6\",\n    \"password\": \"securepassword\",\n    \"contact\": \"nurse1@example.com\",\n    \"category\": \"general\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/register/nurse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"nurse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register patient",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"patient5\",\n    \"password\": \"securepassword\",\n    \"contact\": \"patient1@example.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/register/patient",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"patient"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register assistant",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"assistant5\",\n    \"password\": \"securepassword\",\n    \"contact\": \"assistant1@example.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/register/assistant",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"assistant"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"doctor5\",\n    \"password\": \"securepassword\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Schedule Appointment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{patient}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "nova",
+						"value": "{{auth}}",
+						"description": "token_autn"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"doctor_id\":15,\n    \"date\": \"2024-05-01\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/appointment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "See appointments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{assistant}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/appointments/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"appointments",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Schedule surgery",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{assistant}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patient_id\": 14,\n    \"doctor\": 21,\n    \"nurses\": [\n    [22, \"nurse1\"]\n    ],\n    \"date\": \"2024-09-30\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/surgery/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"surgery",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Prescriptions",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{doctor}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"appointment\",\r\n    \"event_id\": 1,\r\n    \"validity\": \"2024-05-31\",\r\n    \"medicines\":  [\r\n        {\r\n            \"medicine\": \"Paracetamol\",\r\n            \"posology_dose\": 500,\r\n            \"posology_frequency\": 7\r\n        },\r\n        {\r\n            \"medicine\": \"Ibuprofen\",\r\n            \"posology_dose\": 200,\r\n            \"posology_frequency\": 2\r\n        }\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/prescription",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"prescription"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get prescriptions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{assistant}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/prescriptions/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"prescriptions",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Execute Payment",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{patient}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":200,\r\n    \"payment_method\": \"card\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/bills/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"bills",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Top 3 Patients",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{assistant}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dbproj/top3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"top3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Daily Summary",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{assistant}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dbproj/daily/2024-06-30",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"daily",
+						"2024-06-30"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate a monthly report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{assistant}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/dbproj/report",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

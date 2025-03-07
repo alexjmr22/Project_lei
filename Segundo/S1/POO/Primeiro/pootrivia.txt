@@ -1,0 +1,12 @@
+ciencia; D; Qual o elemento mais denso da tebela periodica?; ouro, osmio, carbono, tungestênio, uranio, estroncio, polônio; 1; 10
+ciencia; F;Qual a ciencia que estuda o espaço?; astronomia, geologia, astrologia, cosmotologia, cientologia; 0; 5
+artes; F;Qual é o nome da pintura mais famosa de Leonardo da Vinci?; A Noite Estrelada, A Última Ceia, Mona Lisa; 2; 5 
+artes; D;Quem foi o líder do movimento artístico surrealista?; Pablo Picasso, Salvador Dalí, Vincent van Gogh, Wassily Kandinsky; 1; 10
+natacao; F; Uma piscina olimpica tem 50m de comprimento por 25m de largura?; Verdadeiro, Falso; 0; 5
+natacao; D; Michael Phelps conquistou 7 medalhas de ouro em uma única edição?; Verdadeiro, Falso; 1; 10
+ski; F; Ski é um desporto de verão? Verdadeiro, Falso; 1; 5
+Ski; D;Vasaloppet é a maior prova de Ski do mundo?; Verdadeiro, Falso; 0; 10
+futebol; F; Quem usa a camisola 9 do manchester city?; Haaland, Julian Alvarez, Messi, Pepe; 0; 5
+futebol; D; Qual o numero do Haaland?; 10, 7, 9, 24; 2; 5
+futebol; F; Quem usa a camisola 87 do Benfica?; Rafa, Otavio, Messi, João Neves; 3; 10
+futebol; D; Qual o numero do João Neves?; 9, 87, 54, 10; 1; 10

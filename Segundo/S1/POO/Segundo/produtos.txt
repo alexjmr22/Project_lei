@@ -1,0 +1,10 @@
+Agros Leite|1|Leite de produçao animal meio-gordo|1|0.95|reduzida|FSSC22000|vinho|SIM|Alimentar
+Paracetamol|6|Comprimidos para alívio de dor|20|0.25|SIM|Dr. Silva|bem-estar|NAO|Farmacia
+Pomada Antisseptica|7|Pomada para cortes e feridas|15|3.50|NAO|Sem prescricao|beleza|NAO|Farmacia
+Fralda Infantil|8|Fraldas descartáveis tamanho M|30|0.80|NAO|Sem prescricao|bebes|NAO|Farmacia
+Shampoo Medicinal|9|Shampoo contra caspa|10|5.00|SIM|Dr. Oliveira|bem-estar|NAO|Farmacia
+Comprimidos para Animais|10|Vitaminas para cães|25|1.50|SIM|Dr. Rocha|animais|NAO|Farmacia
+Pão Integral|2|Pão fresco integral|10|0.50|reduzida|ISO9001|congelados|NAO|Alimentar
+Atum Enlatado|3|Atum em azeite de oliva|5|1.20|intermedia|ISO22000|enlatados|SIM|Alimentar
+Vinho Tinto Reserva|4|Vinho tinto reserva 750ml|2|5.50|intermedia|ISO9001,ISO22000|vinho|NAO|Alimentar
+Iogurte Natural|5|Iogurte natural sem açúcar|12|0.80|reduzida|ISO9001,FSSC22000|congelados|NAO|Alimentar
