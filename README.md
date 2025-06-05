@@ -8,19 +8,19 @@ Repositório que reúne os projetos desenvolvidos durante a minha Licenciatura e
 Project_lei/
 ├── Primeiro/
 │   ├── S1/
-│   │   ├── IPRP/         # Introdução à Programação
-│   │   └── TI/           # Tecnologias de Informação
+│   │   ├── IPRP/         # Introdução à Programação e Resolução de Problemas
+│   │   └── TI/           # Tecnologia da Informática
 │   └── S2/
-│       ├── PPP/          # Programação e Projeto
-│       └── TFM/          # Teoria Fundamentada da Matemática
+│       ├── PPP/          # Principios de Programação procidimental 
+│       └── TFM/          # Tópicos de física moderna
 ├── Segundo/
 │   ├── S1/
 │   │   ├── POO/          # Programação Orientada aos Objetos
-│   │   └── Ti/           # Tecnologias de Informação II?
+│   │   └── Ti/           # Teoria da Informação
 │   └── S2/
 │       ├── AED/PL_AED/   # Algoritmos e Estruturas de Dados
-│       ├── ATD/          # Arquitetura de Tecnologias Digitais
-│       ├── BD/BD_PROJETO/ # Bases de Dados e Projeto
+│       ├── ATD/          # Análise e Transformação de Dados
+│       ├── BD/BD_PROJETO/ # Bases de Dados
 │       └── RC/Projeto/   # Redes de Comunicação
 ├── Terceiro/
     └── S1/
