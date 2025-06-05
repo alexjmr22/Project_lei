@@ -32,8 +32,8 @@ Project_lei/
 
 ## Tecnologias Utilizadas
 
-- **Linguagens**: C, C++, Java, Python, SQL, JavaScript
-- **Ferramentas**: Git, VS Code, MySQL, Linux, UML, React
+- **Linguagens**: C, C++, Java, Python, SQL, JavaScript, Matlab
+- **Ferramentas**: Git, VS Code, Linux, UML
 - **Áreas**: Programação, Algoritmos, Sistemas, Bases de Dados, Redes, Computação Gráfica, Compiladores
 
 ## Objetivo
