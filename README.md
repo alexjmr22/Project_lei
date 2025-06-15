@@ -1,55 +1,46 @@
 # Project_lei
 
-Repositório que reúne os projetos desenvolvidos durante a minha Licenciatura em Engenharia Informática. Os projetos estão organizados por ano e semestre, abrangendo várias unidades curriculares ao longo do curso.
+Este repositório contém projetos desenvolvidos durante a minha Licenciatura em Engenharia Informática, com foco em várias unidades curriculares como Algoritmos, Sistemas Operativos, Bases de Dados, entre outras.
 
-## Estrutura do Repositório
+## 📚 Conteúdo
 
-```
-Project_lei/
-├── Primeiro/
-│   ├── S1/
-│   │   ├── IPRP/         # Introdução à Programação e Resolução de Problemas
-│   │   └── TI/           # Tecnologia da Informática
-│   └── S2/
-│       ├── PPP/          # Principios de Programação procidimental 
-│       └── TFM/          # Tópicos de física moderna
-├── Segundo/
-│   ├── S1/
-│   │   ├── POO/          # Programação Orientada aos Objetos
-│   │   └── Ti/           # Teoria da Informação
-│   └── S2/
-│       ├── AED/PL_AED/   # Algoritmos e Estruturas de Dados
-│       ├── ATD/          # Análise e Transformação de Dados
-│       ├── BD/BD_PROJETO/ # Bases de Dados
-│       └── RC/Projeto/   # Redes de Comunicação
-├── Terceiro/
-    └── S1/
-        ├── CG/Projeto/   # Computação Gráfica
-        └── COMP/Projeto/ # Compiladores
-```
+O repositório está organizado por pastas, cada uma representando uma unidade curricular ou projeto específico. Cada pasta pode conter:
 
-> O Terceiro Ano ainda está em desenvolvimento — novos projetos serão adicionados conforme forem sendo concluídos.
+- 📄 Relatórios e exercícios práticos
+- 💻 Código-fonte (C, Python, Java, etc.)
+- 📊 Scripts e simulações
+- 📁 Materiais auxiliares de estudo
 
-## Tecnologias Utilizadas
+## ⚙️ Tecnologias Utilizadas
 
-- **Linguagens**: C, C++, Java, Python, SQL, JavaScript, Matlab
-- **Ferramentas**: Git, VS Code, Linux, UML
-- **Áreas**: Programação, Algoritmos, Sistemas, Bases de Dados, Redes, Computação Gráfica, Compiladores
+- C/C++
+- Python
+- Java
+- SQL
+- Shell Script
+- R
+- Markdown/LaTeX
 
-## Objetivo
+## ✨ Features Visuais
 
-Este repositório serve como portefólio académico e centraliza todos os projetos feitos no decorrer da minha formação em Engenharia Informática. É também um registo da minha evolução técnica e da aplicação prática dos conteúdos lecionados.
+Estatísticas automáticas do meu GitHub geradas com [github-readme-stats](https://github.com/anuraghazra/github-readme-stats):
 
-## Observações
+### 📈 GitHub Stats
+[![alexjmr22's GitHub stats](https://github-readme-stats.vercel.app/api?username=alexjmr22&show_icons=true&theme=default)](https://github.com/anuraghazra/github-readme-stats)
 
-- Cada pasta contém os ficheiros relevantes, códigos, relatórios e documentação associados à unidade curricular.
-- Alguns projetos foram feitos em grupo.
-- Alguns projetos estao incompletos e outros com erros.
-- Este repositório é de uso pessoal e académico.
+### 🔝 Linguagens mais usadas
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=alexjmr22&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
-## Contacto
+## 📌 Notas
 
-Sinta-se à vontade para entrar em contacto:
+- Este repositório serve tanto para fins académicos como para referência futura.
+- Alguns projetos podem conter apenas partes de código ou enunciados incompletos.
+- Caso tenhas interesse em algum dos projetos, sugestões ou dúvidas, sinta-te à vontade para abrir uma _issue_ ou contactar-me.
 
-- Email: alexandrejmr96@gmail.com
-- LinkedIn: https://www.linkedin.com/in/alexandre-rodrigues-a1b725299?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BCHapiDMMQr2JHdefyy6SIg%3D%3D
+---
+
+## 📬 Contacto
+
+[LinkedIn](https://www.linkedin.com/in/seu-perfil)  
+alexjmr22 [at] email.com
+
