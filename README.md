@@ -40,9 +40,9 @@ Project_lei/
 
 ## 🗂️ Unidades Curriculares
 
-| Ano     | Semestre | Unidade Curricular                                  | Caminho                                         |
+| Ano     | Semestre | Unidade Curricular                                  | Path                                            |
 |----------|----------|-----------------------------------------------------|------------------------------------------------|
-| 1º       | S1       | Introdução à Programação e Resolução de Problemas  | [IPRP](./Primeiro/S1/IPRP)                     |
+| 1º       | S1       | Introdução à Programação e Resolução de Problemas  | [IPRP](./Primeiro/S1/IPRP)                      |
 | 1º       | S1       | Tecnologia da Informação                            | [TI](./Primeiro/S1/TI)                         |
 | 1º       | S2       | Princípios de Programação Procedimental             | [PPP](./Primeiro/S2/PPP)                       |
 | 1º       | S2       | Tópicos de Física Moderna                           | [TFM](./Primeiro/S2/TFM)                       |
@@ -50,7 +50,7 @@ Project_lei/
 | 2º       | S1       | Teoria da Informação                                | [TI](./Segundo/S1/Ti)                          |
 | 2º       | S2       | Algoritmos e Estruturas de Dados                    | [AED](./Segundo/S2/AED/PL_AED)                 |
 | 2º       | S2       | Análise e Transformação de Dados                    | [ATD](./Segundo/S2/ATD)                        |
-| 2º       | S2       | Bases de Dados                                      | [BD](./Segundo/S2/BD/BD_PROJETO)              |
+| 2º       | S2       | Bases de Dados                                      | [BD](./Segundo/S2/BD/BD_PROJETO)               |
 | 2º       | S2       | Redes de Comunicação                                | [RC](./Segundo/S2/RC/Projeto)                  |
 | 3º       | S1       | Computação Gráfica                                  | [CG](./Terceiro/S1/CG/Projeto)                 |
 | 3º       | S1       | Compiladores                                        | [COMP](./Terceiro/S1/COMP/Projeto)             |
